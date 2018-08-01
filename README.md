@@ -1,4 +1,4 @@
-# Android MVVM Architecture: Sample App
+# Android MVVM Architecture: AssignmentTest
 This repository contains a detailed sample app that implements MVVM architecture using Event, Room, job , Retrofit.
 
 #### The app has following packages:
