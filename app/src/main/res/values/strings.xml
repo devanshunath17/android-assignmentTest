@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AssignmentTest</string>
+    <string name="error">Somthing Went Wrong.</string>
+    <string name="alert">Are  you sure want to exit the App?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
