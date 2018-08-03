@@ -50,17 +50,19 @@ You assign the attribute to a variable, in the XML layout:
  # Binding adapters
  
  Binding adapters let you customize or create layout attributes. For example:
- 
+ ```kotlin
   @BindingAdapter("imageUrl")
     public static void loadImage(ImageView view, String imageUrl) {
         Glide.with(view.getContext())
                 .load(imageUrl)
                 .into(view);
-                
+                 }
+```
+   
    Using binding adapters lets you move UI calls from the activity to static methods, improving encapsulation.
 
              
-    }
+   
  
 
 
