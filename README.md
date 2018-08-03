@@ -33,7 +33,7 @@ With Data Binding you can write less boilerplate and repetitive code. It moves U
 * Binding Adapters, Binding Methods and Binding Converters
 * Seamless integration with ViewModels
 
-# Layout variables and expressions
+### Layout variables and expressions
 For example, instead of setting text on a TextView in an activity:
 ```java
 TextView textView = findViewById(R.id.txtTitle);
@@ -46,7 +46,7 @@ You assign the attribute to a variable, in the XML layout:
     android:layout_height="wrap_content"
     android:text="@{listItem.title}" />
  ```
- # Binding adapters
+ ### Binding adapters
  Binding adapters let you customize or create layout attributes. For example:
  ```kotlin
   @BindingAdapter("imageUrl")
