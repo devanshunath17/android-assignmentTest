@@ -3,7 +3,11 @@ package com.app.assignmenttest.Ui.Entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.databinding.BaseObservable;
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -12,7 +16,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 @Entity(tableName = "Facts")
-public class ListItem {
+public class ListItem extends BaseObservable {
 
     @PrimaryKey(autoGenerate = true)
     private int uid;
@@ -63,6 +67,11 @@ public class ListItem {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    @BindingAdapter("imageUrl")
+    public static void loadImage(ImageView view, String imageUrl) {
+        Glide.with(view.getContext())
+                .load(imageUrl)
+                .into(view);
+    }
 
 }

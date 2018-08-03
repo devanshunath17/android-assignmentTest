@@ -1,69 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="5dip" >
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardBackgroundColor="@color/colorwhite"
-        card_view:cardCornerRadius="10dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res/android"
+    >
 
-        card_view:cardUseCompatPadding="true">
+    <data>
+        <variable
+            name="listitem"
+            type="com.app.assignmenttest.Ui.Entity.ListItem" />
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dip" >
+    </data>
 
-    <!--  ListRow Left sied Thumbnail image -->
-    <LinearLayout android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="3dip"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip">
-
-        <ImageView
-            android:id="@+id/list_image"
-            android:layout_width="50dip"
-            android:layout_height="50dip"
-            android:background="@color/colorPrimary"
-           />
-
-    </LinearLayout>
-
-    <!-- Title Of Song-->
-    <TextView
-        android:id="@+id/txttitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:textColor="#040404"
-        android:typeface="sans"
-        android:textSize="15dip"
-        android:textStyle="bold"/>
-
-    <!-- Artist Name -->
-    <TextView
-        android:id="@+id/txtdescription"
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txttitle"
-        android:textColor="#343434"
-        android:textSize="10dip"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/thumbnail"
-       />
+        android:orientation="horizontal"
+        android:padding="5dip">
 
-        </RelativeLayout>
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardBackgroundColor="@color/colorwhite"
+            card_view:cardCornerRadius="10dp"
 
-    </android.support.v7.widget.CardView>
+            card_view:cardUseCompatPadding="true">
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dip">
+
+                <!--  ListRow Left sied Thumbnail image -->
+                <LinearLayout
+                    android:id="@+id/thumbnail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        bind:imageUrl="@{listitem.image}"
+                        android:background="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <!-- Title Of Song-->
+                <TextView
+                    android:id="@+id/txttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/thumbnail"
+                    android:layout_toRightOf="@+id/thumbnail"
+                    android:textColor="#040404"
+                    android:textSize="15dip"
+                    android:text="@{listitem.title}"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <!-- Artist Name -->
+                <TextView
+                    android:id="@+id/txtdescription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txttitle"
+                    android:layout_marginTop="1dip"
+                    android:layout_toRightOf="@+id/thumbnail"
+                    android:text="@{listitem.description}"
+                    android:textColor="#343434"
+                    android:textSize="10dip" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</layout>

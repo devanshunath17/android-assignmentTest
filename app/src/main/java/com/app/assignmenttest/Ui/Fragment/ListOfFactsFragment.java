@@ -3,6 +3,7 @@ package com.app.assignmenttest.Ui.Fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -68,9 +69,15 @@ public class ListOfFactsFragment extends Fragment {
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
+
     }
 
     @Override
