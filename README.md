@@ -17,7 +17,7 @@ This repository contains a detailed sample app that implements MVVM architecture
 5. Retrofit: http://square.github.io/retrofit/
 6. Glide: https://www.androidhive.info/2016/04/android-glide-image-library-building-image-gallery-app/
 
-#Technology used
+# Technology used
 1. JobScheduler : compile 'com.birbit:android-priority-jobqueue:2.0.0-beta1'
 2. Event :  compile 'org.greenrobot:eventbus:3.0.0'
 3. Room Persistence :  implementation "android.arch.persistence.room:runtime:1.0.0"
@@ -26,7 +26,7 @@ This repository contains a detailed sample app that implements MVVM architecture
 5. Glide : compile 'com.github.bumptech.glide:glide:3.7.0'
 6. Android DataBinding
 
-#Android DataBinding
+# Android DataBinding
 With Data Binding you can write less boilerplate and repetitive code. It moves UI operations out of the activities and fragments to the XML layout.
 
 1.Layout variables and expressions
@@ -34,7 +34,7 @@ With Data Binding you can write less boilerplate and repetitive code. It moves U
 3.Seamless integration with ViewModels
 
 
-#Layout variables and expressions
+# Layout variables and expressions
 For example, instead of setting text on a TextView in an activity:
 
 TextView textView = findViewById(R.id.txtTitle);
@@ -46,7 +46,7 @@ You assign the attribute to a variable, in the XML layout:
     android:layout_height="wrap_content"
     android:text="@{listItem.title}" />
     
- #Binding adapters
+ # Binding adapters
  Binding adapters let you customize or create layout attributes. For example:
  
   @BindingAdapter("imageUrl")
