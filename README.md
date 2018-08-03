@@ -69,6 +69,7 @@ You assign the attribute to a variable, in the XML layout:
  ```
  
  ```kotlin
+ package com.app.assignmenttest.Ui.Entity;
  public class ListItem extends BaseObservable {
   @BindingAdapter("imageUrl")
     public static void loadImage(ImageView view, String imageUrl) {
