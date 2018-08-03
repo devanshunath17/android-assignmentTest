@@ -29,10 +29,9 @@ This repository contains a detailed sample app that implements MVVM architecture
 # Android DataBinding
 With Data Binding you can write less boilerplate and repetitive code. It moves UI operations out of the activities and fragments to the XML layout.
 
-1.Layout variables and expressions :
-2.Binding Adapters, Binding Methods and Binding Converters:
-3.Seamless integration with ViewModels:
-
+* Layout variables and expressions
+* Binding Adapters, Binding Methods and Binding Converters
+* Seamless integration with ViewModels
 
 # Layout variables and expressions
 For example, instead of setting text on a TextView in an activity:
@@ -48,7 +47,6 @@ You assign the attribute to a variable, in the XML layout:
     android:text="@{listItem.title}" />
  ```
  # Binding adapters
- 
  Binding adapters let you customize or create layout attributes. For example:
  ```kotlin
   @BindingAdapter("imageUrl")
