@@ -48,12 +48,34 @@ You assign the attribute to a variable, in the XML layout:
  ```
  ### Binding adapters
  Binding adapters let you customize or create layout attributes. For example:
+ ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res/android"
+    >
+  <data>
+        <variable
+            name="listitem"
+            type="com.app.assignmenttest.Ui.Entity.ListItem" />
+  </data>
+  ..
+          <ImageView
+           android:id="@+id/list_image"
+           android:layout_width="50dip"
+           android:layout_height="50dip"
+           bind:imageUrl="@{listitem.image}"
+           android:background="@color/colorPrimary" />
+  </layout>
+ ```
+ 
  ```kotlin
+ public class ListItem extends BaseObservable {
   @BindingAdapter("imageUrl")
     public static void loadImage(ImageView view, String imageUrl) {
         Glide.with(view.getContext())
                 .load(imageUrl)
                 .into(view);
+                 }
                  }
 ```
    
